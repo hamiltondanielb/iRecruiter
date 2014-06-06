@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Candidate" representedClassName="Candidate" syncable="YES">
+        <attribute name="graduationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="majorGpa" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="overallGpa" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sponsorshipNeeded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="locationPreference" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="candidates" inverseEntity="Location" syncable="YES"/>
+        <relationship name="major" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Major" inverseName="candidates" inverseEntity="Major" syncable="YES"/>
+        <relationship name="screening" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Screening" inverseName="candidate" inverseEntity="Screening" syncable="YES"/>
+        <relationship name="technicalSkills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TechnicalSkill" inverseName="candidates" inverseEntity="TechnicalSkill" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="screenings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Screening" inverseName="event" inverseEntity="Screening" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="candidates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candidate" inverseName="locationPreference" inverseEntity="Candidate" syncable="YES"/>
+    </entity>
+    <entity name="Major" representedClassName="Major" syncable="YES">
+        <attribute name="college" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="majorDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="candidates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candidate" inverseName="major" inverseEntity="Candidate" syncable="YES"/>
+        <relationship name="technicalQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TechnicalQuestion" inverseName="major" inverseEntity="TechnicalQuestion" syncable="YES"/>
+    </entity>
+    <entity name="Response" representedClassName="Response" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TechnicalQuestion" inverseName="responses" inverseEntity="TechnicalQuestion" syncable="YES"/>
+        <relationship name="screening" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Screening" inverseName="responses" inverseEntity="Screening" syncable="YES"/>
+    </entity>
+    <entity name="Screening" representedClassName="Screening" syncable="YES">
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screener" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="candidate" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Candidate" inverseName="screening" inverseEntity="Candidate" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="screenings" inverseEntity="Event" syncable="YES"/>
+        <relationship name="responses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Response" inverseName="screening" inverseEntity="Response" syncable="YES"/>
+    </entity>
+    <entity name="TechnicalQuestion" representedClassName="TechnicalQuestion" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="major" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Major" inverseName="technicalQuestions" inverseEntity="Major" syncable="YES"/>
+        <relationship name="responses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Response" inverseName="question" inverseEntity="Response" syncable="YES"/>
+    </entity>
+    <entity name="TechnicalSkill" representedClassName="TechnicalSkill" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="candidates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candidate" inverseName="technicalSkills" inverseEntity="Candidate" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Candidate" positionX="-7074" positionY="-4131" width="128" height="180"/>
+        <element name="Event" positionX="-7605" positionY="-4302" width="128" height="75"/>
+        <element name="Location" positionX="-7362" positionY="-4566" width="128" height="75"/>
+        <element name="Major" positionX="-7391" positionY="-4485" width="128" height="105"/>
+        <element name="Response" positionX="-7605" positionY="-4212" width="128" height="90"/>
+        <element name="Screening" positionX="-7407" positionY="-4347" width="128" height="150"/>
+        <element name="TechnicalQuestion" positionX="-7893" positionY="-4320" width="128" height="90"/>
+        <element name="TechnicalSkill" positionX="-7427" positionY="-4116" width="128" height="75"/>
+    </elements>
+</model>

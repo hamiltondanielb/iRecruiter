@@ -1,4 +1,4 @@
-iRecruiter
-==========
+HrInterviewApp
+==============
 
-iPad application for recruiting Professionals to use technology to record and automate the recruiting process. 
+App for gathering information on interviews at job fairs and events
