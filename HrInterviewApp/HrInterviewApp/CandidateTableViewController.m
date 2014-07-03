@@ -331,20 +331,20 @@ MBProgressHUD *progress;
     [super viewDidLoad];
     
     // Adjust UITextField alignment for 6.0
-    self.nameTextField.textAlignment = UITextAlignmentLeft;
-    self.nameTextField.textAlignment = UITextAlignmentRight;
+    //self.nameTextField.textAlignment = UITextAlignmentLeft;
+    //self.nameTextField.textAlignment = UITextAlignmentRight;
     
-    self.emailAddressField.textAlignment = UITextAlignmentLeft;
-    self.emailAddressField.textAlignment = UITextAlignmentRight;
+    //self.emailAddressField.textAlignment = UITextAlignmentLeft;
+    //self.emailAddressField.textAlignment = UITextAlignmentRight;
     
-    self.overallGPATextField.textAlignment = UITextAlignmentLeft;
-    self.overallGPATextField.textAlignment = UITextAlignmentRight;
+    //self.overallGPATextField.textAlignment = UITextAlignmentLeft;
+    //self.overallGPATextField.textAlignment = UITextAlignmentRight;
     
-    self.majorGPATextField.textAlignment = UITextAlignmentLeft;
-    self.majorGPATextField.textAlignment = UITextAlignmentRight;
+    //self.majorGPATextField.textAlignment = UITextAlignmentLeft;
+    //self.majorGPATextField.textAlignment = UITextAlignmentRight;
     
     self.tableView.backgroundView = [[UIView alloc] initWithFrame:self.tableView.bounds];
-    self.tableView.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"book-cover-011.png"]];
+    //self.tableView.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"book-cover-011.png"]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(documentStateChanged:) 

@@ -95,7 +95,6 @@
 		1789F8D4156D27BE00007532 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1789F8D2156D27BE00007532 /* InfoPlist.strings */; };
 		1789F8D6156D27BE00007532 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1789F8D5156D27BE00007532 /* main.m */; };
 		1789F8DA156D27BE00007532 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1789F8D9156D27BE00007532 /* AppDelegate.m */; };
-		1789F8E8156D27BE00007532 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1789F8E7156D27BE00007532 /* SenTestingKit.framework */; };
 		1789F8E9156D27BE00007532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1789F8C9156D27BE00007532 /* UIKit.framework */; };
 		1789F8EA156D27BE00007532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1789F8CB156D27BE00007532 /* Foundation.framework */; };
 		1789F8F2156D27BE00007532 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1789F8F0156D27BE00007532 /* InfoPlist.strings */; };
@@ -264,8 +263,7 @@
 		1789F8D7156D27BE00007532 /* HrInterviewApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HrInterviewApp-Prefix.pch"; sourceTree = "<group>"; };
 		1789F8D8156D27BE00007532 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1789F8D9156D27BE00007532 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1789F8E6156D27BE00007532 /* HrInterviewAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HrInterviewAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1789F8E7156D27BE00007532 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1789F8E6156D27BE00007532 /* HrInterviewAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HrInterviewAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1789F8EF156D27BE00007532 /* HrInterviewAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HrInterviewAppTests-Info.plist"; sourceTree = "<group>"; };
 		1789F8F1156D27BE00007532 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1789F8F3156D27BE00007532 /* HrInterviewAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HrInterviewAppTests.h; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1789F8E8156D27BE00007532 /* SenTestingKit.framework in Frameworks */,
 				1789F8E9156D27BE00007532 /* UIKit.framework in Frameworks */,
 				1789F8EA156D27BE00007532 /* Foundation.framework in Frameworks */,
 			);
@@ -434,7 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				1789F8C5156D27BE00007532 /* HrInterviewApp.app */,
-				1789F8E6156D27BE00007532 /* HrInterviewAppTests.octest */,
+				1789F8E6156D27BE00007532 /* HrInterviewAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 				1789F8C9156D27BE00007532 /* UIKit.framework */,
 				1789F8CB156D27BE00007532 /* Foundation.framework */,
 				1789F8CD156D27BE00007532 /* CoreGraphics.framework */,
-				1789F8E7156D27BE00007532 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -689,8 +685,8 @@
 			);
 			name = HrInterviewAppTests;
 			productName = HrInterviewAppTests;
-			productReference = 1789F8E6156D27BE00007532 /* HrInterviewAppTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 1789F8E6156D27BE00007532 /* HrInterviewAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -698,7 +694,8 @@
 		1789F8BC156D27BD00007532 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 1789F8BF156D27BD00007532 /* Build configuration list for PBXProject "HrInterviewApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -905,8 +902,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -918,10 +920,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -931,16 +938,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -958,7 +974,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HrInterviewApp/HrInterviewApp-Prefix.pch";
 				INFOPLIST_FILE = "HrInterviewApp/HrInterviewApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/HrInterviewApp/TestFlightSDK1\"",
@@ -982,7 +998,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HrInterviewApp/HrInterviewApp-Prefix.pch";
 				INFOPLIST_FILE = "HrInterviewApp/HrInterviewApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/HrInterviewApp/TestFlightSDK1\"",
@@ -1002,14 +1018,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HrInterviewApp.app/HrInterviewApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HrInterviewApp/HrInterviewApp-Prefix.pch";
 				INFOPLIST_FILE = "HrInterviewAppTests/HrInterviewAppTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1019,14 +1034,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HrInterviewApp.app/HrInterviewApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HrInterviewApp/HrInterviewApp-Prefix.pch";
 				INFOPLIST_FILE = "HrInterviewAppTests/HrInterviewAppTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

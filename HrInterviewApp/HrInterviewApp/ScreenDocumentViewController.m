@@ -41,8 +41,8 @@ SmallDocumentViewController *selectedSmallDoc;
     smallDocuments = [[NSMutableArray alloc] init];
     
     // Set background tile
-    UIImage *patternImage = [UIImage imageNamed:@"book-cover-011.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+    //UIImage *patternImage = [UIImage imageNamed:@"book-cover-011.png"];
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
     
     // Add a gesture regonizer to expand the panning gesture of the scroll view
     [self.pagingWrapperView addGestureRecognizer:self.pagingScrollView.panGestureRecognizer];
